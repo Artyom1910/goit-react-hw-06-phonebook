@@ -1,0 +1,5 @@
+.Filter {
+  display: inline-flex;
+  flex-direction: column;
+  width: 350px;
+}

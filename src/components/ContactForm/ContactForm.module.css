@@ -1,0 +1,12 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+  .button {
+      background-color: gray;
+  }
