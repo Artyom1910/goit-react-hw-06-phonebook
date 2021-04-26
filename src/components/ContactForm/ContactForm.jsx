@@ -16,10 +16,25 @@ class ContactForm extends Component {
     this.setState({ [name]: value });
   };
 
+  findName = name => {
+    const { contacts } = this.props;
+    const normalizedName = name.toLowerCase();
+    return contacts.find(
+      contact => contact.name.toLowerCase() === normalizedName,
+    );
+  };
+  
   handleSubmit = e => {
-    const { onSubmit } = this.props;
-
     e.preventDefault();
+    const { name } = this.state;
+    const { onSubmit } = this.props;
+    const checkName = this.findName(name);
+
+    if (checkName) {
+      alert(`${name} is already in contacts`);
+      this.resetForm();
+      return;
+    }
 
     onSubmit(this.state);
 

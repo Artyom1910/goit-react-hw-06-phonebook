@@ -7,10 +7,10 @@ import styles from './ContactList.module.css';
 
 class ContactList extends Component {
   render() {
-    const { onVisibleFilter, onDeleteContact } = this.props;
+    const { contacts, onDeleteContact } = this.props;
     return (
       <ul className={styles.ContactList}>
-        {onVisibleFilter.map(({ id, name, number }) => {
+        {contacts.map(({ id, name, number }) => {
           return (
             <ContactItem
               key={id}
